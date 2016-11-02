@@ -2,7 +2,7 @@
 #include "main.h"
 
 /* Variables ------------------------------------------------------------------*/
-volatile static uint32_t tickCnt = 0;
+static volatile uint32_t tickCnt = 0;
 
 /* Prototypes -----------------------------------------------------------------*/
 static void delay_ms(uint32_t time_ms);
@@ -54,6 +54,7 @@ int main(int argc, char* argv[]) {
     WDT->WDT_MR = WDT_MR_WDDIS;
 
     // Send a greeting to the trace device (skipped on Release).
+    trace_puts("Now it's configured to github. NICE!")
     trace_puts("Hello from Albin's DUE_Basic setup!");
 
     // The standard output and the standard error should be forwarded to
